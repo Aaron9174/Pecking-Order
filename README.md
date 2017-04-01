@@ -20,7 +20,7 @@ git checkout -b <name of your scene> (this creates a local branch)<br />
 ----<br />
 when you are working on your scene and you make progress and want to push to github use these commands<br />
 git checkout [name of your local branch]<br />
-git add -A<br />
+git add -A   (UNITY HAS TO BE CLOSED IN ORDER FOR THIS TO WORK)<br />
 git commit (it'll ask you to write a message at the top, write it and then save the file)<br />
 git push origin [name of your branch]<br />
 
