@@ -20,4 +20,9 @@ git checkout -b <name of your scene> (this creates a local branch)<br />
 ----<br />
 when you are working on your scene and you make progress and want to push to github use these commands<br />
 git checkout [name of your local branch]<br />
-git push origin [name of your local branch]<br />
+git add [path to the file you modified or added] (do this for every file you change or add)<br />
+git commit (it'll ask you to write a message at the top, write it and then save the file)<br />
+git push origin [name of your branch]<br />
+<br /><br />
+so the reason why you have to add the files you changed or modified individually is because unity has some files that just wont transfer over for some reason and I couldn't figure it out
+
