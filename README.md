@@ -24,5 +24,5 @@ git add [path to the file you modified or added] (do this for every file you cha
 git commit (it'll ask you to write a message at the top, write it and then save the file)<br />
 git push origin [name of your branch]<br />
 <br /><br />
-so the reason why you have to add the files you changed or modified individually is because unity has some files that just wont transfer over for some reason and I couldn't figure it out
+so the reason why you have to add the files you changed or modified individually is because unity has some files that just wont transfer over for some reason and I couldn't figure it out. I'll try to find a way to make it so that you can just do git add -A but I'm note sure how that's going to go over.
 
