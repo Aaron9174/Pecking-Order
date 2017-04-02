@@ -16,9 +16,6 @@ public class Register : MonoBehaviour {
 	private string Password;
 	private string ConfPassword;
 	private string form;
-	private string[] Characters = {"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z",
-								   "A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z",
-								   "1","2","3","4","5","6","7","8","9","0","_","-"};
 	
 	public void RegisterButton(){
 		bool CPW = false;
@@ -109,18 +106,5 @@ public class Register : MonoBehaviour {
 		Password = password.GetComponent<InputField>().text;
 		ConfPassword = confPassword.GetComponent<InputField>().text;
 	}
-    /*IEnumerator WaitForRequest(WWW download)
-    {
-        yield return download;
-
-        if (download.error == null)
-        {
-            Debug.Log("WWW Ok!: " + download.text);
-        }
-        else
-        {
-            Debug.Log("WWW Error: " + download.error);
-        }
-    }*/
 
 }

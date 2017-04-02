@@ -16,8 +16,6 @@ public class Login : MonoBehaviour {
         WWWForm form = new WWWForm();
         form.AddField("login","true");
 
-        /*WWW download = new WWW(loginURL, form);
-        yield return download;*/
 
         if (Username != ""){
             Debug.Log(Username);
@@ -41,7 +39,7 @@ public class Login : MonoBehaviour {
             username.GetComponent<InputField>().text = "";
             password.GetComponent<InputField>().text = "";
             print("Login Sucessful");
-            //uncomment this after the php is debugged
+            //go to the main menu
             SceneManager.LoadScene("Main Menu");
         }
 	}

@@ -2446,9 +2446,9 @@ MonoBehaviour:
   username: {fileID: 1438843411}
   password: {fileID: 1215334699}
   confPassword: {fileID: 6036198}
-  usernameTaken: {fileID: 0}
-  RegSuccess: {fileID: 0}
-  RegFail: {fileID: 0}
+  usernameTaken: {fileID: 2014094459}
+  RegSuccess: {fileID: 319418269}
+  RegFail: {fileID: 1411113059}
 --- !u!114 &1856259847
 MonoBehaviour:
   m_ObjectHideFlags: 0
