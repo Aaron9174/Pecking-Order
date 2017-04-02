@@ -109,18 +109,5 @@ public class Register : MonoBehaviour {
 		Password = password.GetComponent<InputField>().text;
 		ConfPassword = confPassword.GetComponent<InputField>().text;
 	}
-    /*IEnumerator WaitForRequest(WWW download)
-    {
-        yield return download;
-
-        if (download.error == null)
-        {
-            Debug.Log("WWW Ok!: " + download.text);
-        }
-        else
-        {
-            Debug.Log("WWW Error: " + download.error);
-        }
-    }*/
 
 }
