@@ -42,7 +42,7 @@ public class Login : MonoBehaviour {
             password.GetComponent<InputField>().text = "";
             print("Login Sucessful");
             //uncomment this after the php is debugged
-            //SceneManager.LoadScene("Main Menu");
+            SceneManager.LoadScene("Main Menu");
         }
 	}
 
