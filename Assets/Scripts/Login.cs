@@ -39,6 +39,7 @@ public class Login : MonoBehaviour {
             username.GetComponent<InputField>().text = "";
             password.GetComponent<InputField>().text = "";
             print("Login Sucessful");
+            PlayerPrefs.SetString("username", Username);
             //go to the main menu
             SceneManager.LoadScene("Main Menu");
         }
