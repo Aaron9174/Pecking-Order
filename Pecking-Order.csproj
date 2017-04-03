@@ -99,11 +99,14 @@
     <Compile Include="Assets\Scripts\DraggingScripts\DraggingActionsTest.cs" />
     <Compile Include="Assets\Scripts\DraggingScripts\draggingBasics.cs" />
     <Compile Include="Assets\Scripts\Login.cs" />
+    <Compile Include="Assets\Scripts\LogoutServer.cs" />
     <Compile Include="Assets\Scripts\ManaVisuals.cs" />
     <Compile Include="Assets\Scripts\PreviewScripts\hover_Preview.cs" />
     <Compile Include="Assets\Scripts\Register.cs" />
+    <Compile Include="Assets\Scripts\ScrollDownMenu.cs" />
     <Compile Include="Assets\Scripts\Visual\handCardDistance.cs" />
     <Compile Include="Assets\Scripts\Visual\oneCreatureManager.cs" />
+    <Compile Include="Assets\Scripts\buttonScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\DOTween\DOTween.XML" />

@@ -4,4 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Login Menu.unity
+  - enabled: 1
+    path: Assets/Main Menu.unity
+  - enabled: 1
+    path: Assets/BattleScene.unity
+  - enabled: 1
+    path: Assets/Deck Building Scene.unity
+  - enabled: 1
+    path: Assets/Options.unity
