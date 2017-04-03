@@ -1,5 +1,5 @@
 <?php
-$connection=mysqli_connect("game.ctcmtgrdebio.us-west-2.rds.amazonaws.com","mpdean1","4419mpdM19!!");
+$connection=mysqli_connect("game.ctcmtgrdebio.us-west-2.rds.amazonaws.com",$username,$password);
 $db = mysql_select_db('game', $connection);
 
 //user is registering for a new account
