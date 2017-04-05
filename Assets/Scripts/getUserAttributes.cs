@@ -18,13 +18,13 @@ public class getUserAttributes : MonoBehaviour {
         goldText = GameObject.Find("goldText").GetComponent<Text>();
         gemText = GameObject.Find("gemText").GetComponent<Text>();
         string[] separators = {":"};
-        string loginURL = "http://test1.xu4qu3w2zy.us-east-1.elasticbeanstalk.com/player.php";
+        string URL = "http://test1.xu4qu3w2zy.us-east-1.elasticbeanstalk.com/player.php";
 
         WWWForm form = new WWWForm();
         form.AddField("username", PlayerPrefs.GetString("username"));
         Debug.Log(PlayerPrefs.GetString("username"));
         form.AddField("playerAttributes", "true");
-        WWW w = new WWW(loginURL, form);
+        WWW w = new WWW(URL, form);
         while(!w.isDone) { }
         string result = w.text;
         Debug.Log(result);

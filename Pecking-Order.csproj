@@ -13,13 +13,11 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile>
-    </CompilerResponseFile>
+    <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>5.5.0x1-CollabPreview</UnityVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <LangVersion Condition=" '$(VisualStudioVersion)' != '10.0' ">4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -108,6 +106,7 @@
     <Compile Include="Assets\Scripts\ScrollDownMenu.cs" />
     <Compile Include="Assets\Scripts\Visual\handCardDistance.cs" />
     <Compile Include="Assets\Scripts\Visual\oneCreatureManager.cs" />
+    <Compile Include="Assets\Scripts\addFriend.cs" />
     <Compile Include="Assets\Scripts\buttonScript.cs" />
     <Compile Include="Assets\Scripts\getUserAttributes.cs" />
   </ItemGroup>
