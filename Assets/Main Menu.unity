@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: 313532}
   - component: {fileID: 313531}
   m_Layer: 0
-  m_Name: Text
+  m_Name: goldText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1077,7 +1077,7 @@ GameObject:
   - component: {fileID: 673586959}
   - component: {fileID: 673586958}
   m_Layer: 0
-  m_Name: Text
+  m_Name: gemText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1967,7 +1967,7 @@ GameObject:
   - component: {fileID: 1463705375}
   - component: {fileID: 1463705374}
   m_Layer: 0
-  m_Name: Text
+  m_Name: levelText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1988,7 +1988,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.017}
   m_AnchorMax: {x: 1, y: 0.35137317}
-  m_AnchoredPosition: {x: 0, y: -0.08280277}
+  m_AnchoredPosition: {x: 0, y: -0.08280182}
   m_SizeDelta: {x: 0.3, y: 1.3213}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1463705374
@@ -2510,6 +2510,7 @@ GameObject:
   - component: {fileID: 2132319956}
   - component: {fileID: 2132319958}
   - component: {fileID: 2132319957}
+  - component: {fileID: 2132319959}
   m_Layer: 0
   m_Name: Tool Bar
   m_TagString: Untagged
@@ -2573,3 +2574,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2132319955}
+--- !u!114 &2132319959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2132319955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f6e5b14d73a5734495ff379bc868d03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelText: {fileID: 1463705374}
+  goldText: {fileID: 313531}
+  gemText: {fileID: 673586958}
