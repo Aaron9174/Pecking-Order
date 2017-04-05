@@ -6,15 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Login Menu.unity
-  - enabled: 1
     path: Assets/Main Menu.unity
-<<<<<<< HEAD
-=======
+  - enabled: 1
+    path: Assets/Login Menu.unity
   - enabled: 1
     path: Assets/BattleScene.unity
   - enabled: 1
-    path: Assets/Deck Building Scene.unity
-  - enabled: 1
     path: Assets/Options.unity
->>>>>>> 59389d4f4aca7762b03d07b54bd4bb647d05febc
