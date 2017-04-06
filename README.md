@@ -16,7 +16,7 @@ from there everybody will be working on a seperate scene in a seperate branch<br
 
 4. use these commands in order<br />
 git remote add origin https://github.com/Aaron9174/Pecking-Order (adds the repository as a remote reference)<br />
-git checkout -b <name of your scene> (this creates a local branch)<br />
+git checkout -b [name of your branch] (this creates a local branch)<br />
 ----<br />
 when you are working on your scene and you make progress and want to push to github use these commands<br />
 git checkout [name of your local branch]<br />

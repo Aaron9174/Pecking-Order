@@ -9,6 +9,7 @@ public class Login : MonoBehaviour
 {
     public GameObject username;
     public GameObject password;
+    public GameObject wrong;
     private string Username;
     private string Password;
 
@@ -49,6 +50,10 @@ public class Login : MonoBehaviour
             PlayerPrefs.SetString("username", Username);
             //go to the main menu
             SceneManager.LoadScene("Main Menu");
+        }
+        else
+        {
+            wrong.SetActive(true);
         }
     }
 
