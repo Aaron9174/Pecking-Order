@@ -9,6 +9,8 @@ public class addFriend : MonoBehaviour
     public GameObject invalidUsername;
     public GameObject added;
     public GameObject friendInput;
+    public GameObject same;
+    public GameObject repeat;
     private string friendName;
 
     public void add()
@@ -17,6 +19,7 @@ public class addFriend : MonoBehaviour
         WWWForm form = new WWWForm();
         friendName = friendInput.GetComponent<InputField>().text;
         Debug.Log(friendName);
+        form.AddField("addFriend", "true");
         form.AddField("friend", friendName);
         form.AddField("username", PlayerPrefs.GetString("username"));
         WWW w = new WWW(url, form);
@@ -30,13 +33,61 @@ public class addFriend : MonoBehaviour
             {
                 invalidUsername.SetActive(false);
             }
+            if (repeat.activeInHierarchy == true)
+            {
+                repeat.SetActive(false);
+            }
+            if (same.activeInHierarchy == true)
+            {
+                same.SetActive(false);
+            }
             added.SetActive(true);
         }
-        else
+        else if(result == "same")
         {
+            if (invalidUsername.activeInHierarchy == true)
+            {
+                invalidUsername.SetActive(false);
+            }
             if (added.activeInHierarchy == true)
             {
                 added.SetActive(false);
+            }
+            if (repeat.activeInHierarchy == true)
+            {
+                repeat.SetActive(false);
+            }
+            same.SetActive(true);
+        }
+        else if(result == "repeat")
+        {
+            if (invalidUsername.activeInHierarchy == true)
+            {
+                invalidUsername.SetActive(false);
+            }
+            if (added.activeInHierarchy == true)
+            {
+                added.SetActive(false);
+            }
+            if (same.activeInHierarchy == true)
+            {
+                same.SetActive(false);
+            }
+            repeat.SetActive(true);
+        }
+        else
+        {
+            if (repeat.activeInHierarchy == true)
+            {
+                repeat.SetActive(false);
+            }
+            if (added.activeInHierarchy == true)
+            {
+                added.SetActive(false);
+            }
+            if (same.activeInHierarchy == true)
+            {
+                same.SetActive(false);
             }
             invalidUsername.SetActive(true);
         }
