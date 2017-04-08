@@ -16,17 +16,8 @@
     <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
-<<<<<<< HEAD
     <UnityVersion>5.5.1f1</UnityVersion>
     <RootNamespace></RootNamespace>
-||||||| merged common ancestors
-    <UnityVersion>5.5.0x1-CollabPreview</UnityVersion>
-    <RootNamespace>
-    </RootNamespace>
-=======
-    <UnityVersion>5.5.0x1-CollabPreview</UnityVersion>
-    <RootNamespace></RootNamespace>
->>>>>>> 92286fdf4e3beda76ca63ac7dae4afb131524e6f
     <LangVersion Condition=" '$(VisualStudioVersion)' != '10.0' ">4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -61,9 +52,6 @@
     <Reference Include="UnityEngine">
       <HintPath>Library\UnityAssemblies\UnityEngine.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Advertisements">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Advertisements.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
@@ -78,9 +66,6 @@
     </Reference>
     <Reference Include="UnityEngine.HoloLens">
       <HintPath>Library\UnityAssemblies\UnityEngine.HoloLens.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Purchasing">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Purchasing.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.VR">
       <HintPath>Library\UnityAssemblies\UnityEngine.VR.dll</HintPath>
@@ -118,12 +103,14 @@
     <Compile Include="Assets\Scripts\ManaVisuals.cs" />
     <Compile Include="Assets\Scripts\PreviewScripts\hover_Preview.cs" />
     <Compile Include="Assets\Scripts\Register.cs" />
+    <Compile Include="Assets\Scripts\RevealFriendsPanel.cs" />
     <Compile Include="Assets\Scripts\ScrollDownMenu.cs" />
     <Compile Include="Assets\Scripts\Visual\handCardDistance.cs" />
     <Compile Include="Assets\Scripts\Visual\oneCreatureManager.cs" />
     <Compile Include="Assets\Scripts\addFriend.cs" />
     <Compile Include="Assets\Scripts\buttonScript.cs" />
     <Compile Include="Assets\Scripts\getUserAttributes.cs" />
+    <Compile Include="Assets\Scripts\variableLengthFriends.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\DOTween\DOTween.XML" />
