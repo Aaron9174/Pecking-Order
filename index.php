@@ -1,6 +1,7 @@
 <?php
-$connection=mysqli_connect("game.ctcmtgrdebio.us-west-2.rds.amazonaws.com",$username,$password);
+$connection=mysqli_connect("game.ctcmtgrdebio.us-west-2.rds.amazonaws.com","mpdean1","4419mpdM19!!");
 $db = mysql_select_db('game', $connection);
+
 
 //user is registering for a new account
 if(isset($_POST['register']))
@@ -47,12 +48,6 @@ if(isset($_POST['register']))
 			/* close statement */
 			mysqli_stmt_close($stmt);
 		}
-		/*if($result2==false)
-		{
-			//some kind of error needs to be reported back to the user here
-			print "error";
-			exit();
-		}*/
 		print "success";
 		exit();
 	}
