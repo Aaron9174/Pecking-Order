@@ -1,4 +1,28 @@
 sceneSetups:
+<<<<<<< HEAD
+||||||| merged common ancestors
+<<<<<<< HEAD
+- path: Assets/Login Menu.unity
+||||||| merged common ancestors
+- path: Assets/Options.unity
+=======
+=======
+<<<<<<< HEAD
+- path: Assets/Options.unity
+=======
+<<<<<<< HEAD
+- path: Assets/Login Menu.unity
+||||||| merged common ancestors
+- path: Assets/Options.unity
+=======
+>>>>>>> acd752402de3f969b8098162fcace1777e5dde0e
 - path: Assets/Main Menu.unity
+<<<<<<< HEAD
+||||||| merged common ancestors
+>>>>>>> b7939126fd9106eac4b249cdabd4efcb9c9294f9
+=======
+>>>>>>> b7939126fd9106eac4b249cdabd4efcb9c9294f9
+>>>>>>> 3bf0b9babb95da095daa7fd70dcb23571fda0975
+>>>>>>> acd752402de3f969b8098162fcace1777e5dde0e
   isLoaded: 1
   isActive: 1
