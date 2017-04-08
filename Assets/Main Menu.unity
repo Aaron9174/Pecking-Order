@@ -940,17 +940,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1900843524}
-        m_MethodName: activate
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1900843525}
         m_MethodName: organize
         m_Mode: 1
@@ -1403,7 +1392,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &755452820
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1420,10 +1409,10 @@ RectTransform:
   m_Father: {fileID: 268415495}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.8244055}
-  m_AnchorMax: {x: 0.5, y: 0.8244055}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 116, y: 25}
+  m_AnchorMin: {x: 0, y: 0.7488109}
+  m_AnchorMax: {x: 1, y: 0.8945946}
+  m_AnchoredPosition: {x: 0, y: 0.5}
+  m_SizeDelta: {x: 0, y: -2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1007287395
 GameObject:
@@ -2271,6 +2260,7 @@ RectTransform:
   - {fileID: 72827311}
   - {fileID: 2043734569}
   - {fileID: 28939946}
+  - {fileID: 1900843523}
   - {fileID: 2065795674}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -2572,16 +2562,16 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1900843522}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 2065795674}
-  m_RootOrder: 2
+  m_Father: {fileID: 1526091793}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 236.49998, y: -200.22002}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1900843524
@@ -2607,7 +2597,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9737503b467eb764c9e6297a2d9ac14c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slots: []
+  slot: {fileID: 755452819}
+  temp: {fileID: 645540591}
 --- !u!1 &1901907099
 GameObject:
   m_ObjectHideFlags: 0
@@ -2900,9 +2891,8 @@ RectTransform:
   m_Children:
   - {fileID: 404204614}
   - {fileID: 645540592}
-  - {fileID: 1900843523}
   m_Father: {fileID: 1526091793}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}

@@ -11,6 +11,6 @@ public class RevealFriendsPanel : MonoBehaviour {
         if (temp.activeSelf == true)
             temp.SetActive(false);
         else
-            temp.SetActive(true);
+            temp.SetActive(true);      
     }
 }
