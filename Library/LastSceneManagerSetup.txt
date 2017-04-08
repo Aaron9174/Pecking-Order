@@ -1,4 +1,14 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Options.unity
+=======
+<<<<<<< HEAD
+- path: Assets/Login Menu.unity
+||||||| merged common ancestors
+- path: Assets/Options.unity
+=======
+- path: Assets/Main Menu.unity
+>>>>>>> b7939126fd9106eac4b249cdabd4efcb9c9294f9
+>>>>>>> 3bf0b9babb95da095daa7fd70dcb23571fda0975
   isLoaded: 1
   isActive: 1
