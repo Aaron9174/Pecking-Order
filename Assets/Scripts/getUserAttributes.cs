@@ -34,9 +34,4 @@ public class getUserAttributes : MonoBehaviour {
         goldText.text = words[1];
         gemText.text = words[2];
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }
