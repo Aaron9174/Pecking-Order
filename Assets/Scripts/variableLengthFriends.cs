@@ -10,7 +10,7 @@ public class variableLengthFriends : MonoBehaviour {
     public GameObject temp;
     private GameObject[] slots;
     private int length;
-    string URL = "http://gamephp.hmktqg5mmp.us-east-1.elasticbeanstalk.com/player.php";
+    string URL = "http://gamephp2.hmktqg5mmp.us-east-1.elasticbeanstalk.com/player.php";
     public void activate()
     {
         if (temp.activeSelf == true)
@@ -50,7 +50,7 @@ public class variableLengthFriends : MonoBehaviour {
         string[] separators = { ":" };
         form.AddField("friendArray", "true");
         form.AddField("username", PlayerPrefs.GetString("username"));
-        WWW w = new WWW("http://gamephp.hmktqg5mmp.us-east-1.elasticbeanstalk.com/player.php", form);
+        WWW w = new WWW("http://gamephp2.hmktqg5mmp.us-east-1.elasticbeanstalk.com/player.php", form);
         while (!w.isDone) { }
         String result = w.text;
 

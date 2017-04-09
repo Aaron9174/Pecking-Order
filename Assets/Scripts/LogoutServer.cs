@@ -9,7 +9,7 @@ public class LogoutServer : MonoBehaviour
 {
     public void logout()
     {
-        string loginURL = "http://gamephp.hmktqg5mmp.us-east-1.elasticbeanstalk.com/";
+        string loginURL = "http://gamephp2.hmktqg5mmp.us-east-1.elasticbeanstalk.com/";
         WWWForm form = new WWWForm();
         form.AddField("logout", "true");
         string username = PlayerPrefs.GetString("username");

@@ -20,7 +20,7 @@ public class Register : MonoBehaviour {
 	public void RegisterButton(){
 		bool CPW = false;
 
-        string loginURL = "http://gamephp.hmktqg5mmp.us-east-1.elasticbeanstalk.com/";
+        string loginURL = "http://gamephp2.hmktqg5mmp.us-east-1.elasticbeanstalk.com/";
         WWWForm form = new WWWForm();
         form.AddField("register", "true");
 
