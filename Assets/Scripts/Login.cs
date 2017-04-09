@@ -15,7 +15,7 @@ public class Login : MonoBehaviour
 
     public void LoginButton()
     {
-        string loginURL = "http://test1.xu4qu3w2zy.us-east-1.elasticbeanstalk.com/";
+        string loginURL = "http://gamephp.hmktqg5mmp.us-east-1.elasticbeanstalk.com/";
         WWWForm form = new WWWForm();
         form.AddField("login", "true");
 

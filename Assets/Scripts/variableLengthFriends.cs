@@ -10,7 +10,7 @@ public class variableLengthFriends : MonoBehaviour {
     public GameObject temp;
     private GameObject[] slots;
     private int length;
-    string URL = "http://test1.xu4qu3w2zy.us-east-1.elasticbeanstalk.com/player.php";
+    string URL = "http://gamephp.hmktqg5mmp.us-east-1.elasticbeanstalk.com/player.php";
     public void activate()
     {
         if (temp.activeSelf == true)
@@ -50,7 +50,7 @@ public class variableLengthFriends : MonoBehaviour {
         string[] separators = { ":" };
         form.AddField("friendArray", "true");
         form.AddField("username", PlayerPrefs.GetString("username"));
-        WWW w = new WWW("http://test1.xu4qu3w2zy.us-east-1.elasticbeanstalk.com/player.php", form);
+        WWW w = new WWW("http://gamephp.hmktqg5mmp.us-east-1.elasticbeanstalk.com/player.php", form);
         while (!w.isDone) { }
         String result = w.text;
 
@@ -79,7 +79,7 @@ public class variableLengthFriends : MonoBehaviour {
 
         if(updateFriends)
         {
-            getUsernames();
+            //getUsernames();
 
             length = calculateLength();
 
@@ -92,7 +92,7 @@ public class variableLengthFriends : MonoBehaviour {
                 Vector3 mv = slot.transform.position;
 
                 Debug.Log("slot position = " + slot.transform.position);
-                for (int i = 0; i < length; i++)
+                for (int i = 0; i < length-1; i++)
                 {
                     slots[i] = Instantiate(slot, slot.transform.position, Quaternion.identity, slot.transform.parent);
                     slots[i].SetActive(true);

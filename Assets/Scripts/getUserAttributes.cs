@@ -18,7 +18,7 @@ public class getUserAttributes : MonoBehaviour {
         goldText = GameObject.Find("goldText").GetComponent<Text>();
         gemText = GameObject.Find("gemText").GetComponent<Text>();
         string[] separators = {":"};
-        string URL = "http://test1.xu4qu3w2zy.us-east-1.elasticbeanstalk.com/player.php";
+        string URL = "http://gamephp.hmktqg5mmp.us-east-1.elasticbeanstalk.com/player.php";
 
         WWWForm form = new WWWForm();
         form.AddField("username", PlayerPrefs.GetString("username"));
