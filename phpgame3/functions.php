@@ -306,3 +306,132 @@ function getSpellID($connection,$cardName)
 	}
 	echo $cardid;
 }
+
+
+function attack($connection,$gameID,$attackIdSpot,$attackHpSpot,$attackhp,$defendIdSpot,$defendHpSpot,$defendhp)
+{
+	if($attackhp <= 0 && $defendhp <=0 ) {
+		$SQL = "UPDATE game.game_instance
+				SET ".$attackIdSpot." = NULL, ".$attackHpSpot." = NULL, ".$defendIdSpotSpot." = NULL, ".$defendHpSpot." = NULL WHERE gameid = ?";
+	}
+	else if($defendhp <= 0) {
+		$SQL = "UPDATE game.game_instance
+				SET ".$attackHpSpot. " = ".$attackhp." , ".$defendIdSpotSpot." = NULL, ".$defendHpSpot." = NULL WHERE gameid = ?";
+	}
+	else if($attackhp <= 0) {
+		$SQL = "UPDATE game.game_instance
+				SET ".$attackIdSpot." = NULL, ".$attackHpSpot." = NULL, ".$defendHpSpot." = ".$defendhp." WHERE gameid = ?";
+	} else {
+		$SQL = "UPDATE game.game_instance
+				SET ".$attackHpSpot. " = ".$attackhp." , ".$defendHpSpot." = ".$defendhp." WHERE gameid = ?";
+	}
+			
+	if ($stmt = mysqli_prepare($connection,$SQL)) {
+		mysqli_stmt_bind_param($stmt, "i", $gameid);
+		mysqli_stmt_execute($stmt);
+		mysqli_stmt_close($stmt);
+	}
+}
+
+function sacrifice($connection,$gameid,$newidcol,$newid,$newhpcol,$newhp)
+{
+	$SQL = "UPDATE game.game_instance
+			SET ".$newidcol." = ".$newid. " , ".$newhpcol. " = ".$newhp. " WHERE gameid = ?";
+			
+	if ($stmt = mysqli_prepare($connection,$SQL)) {
+		mysqli_stmt_bind_param($stmt, "i", $gameid);
+		mysqli_stmt_execute($stmt);
+		mysqli_stmt_close($stmt);
+	}
+}
+
+function getCardAttack($connection,$cardid)
+{
+	$SQL = "SELECT attack
+			FROM game.animal
+			WHERE cardid = ?";
+	if ($stmt = mysqli_prepare($connection,$SQL)) {
+		mysqli_stmt_bind_param($stmt, "i", $cardid);
+		mysqli_stmt_bind_result($stmt,$attack);
+		mysqli_stmt_execute($stmt);
+		mysqli_stmt_fetch($stmt);
+		mysqli_stmt_close($stmt);
+	}
+	return $attack;
+}
+
+function placeCard($connection,$gameid,$columnid,$id,$columnhp,$attack)
+{
+	$SQL = "UPDATE game.game_instance
+			SET ".$columnid." = ".$id." , ".$columnhp." = ".$attack." WHERE gameid = ?";
+			
+	if ($stmt = mysqli_prepare($connection,$SQL)) {
+		mysqli_stmt_bind_param($stmt, "i", $gameid);
+		mysqli_stmt_execute($stmt);
+		mysqli_stmt_close($stmt);
+	}
+}
+
+function findColumnID($spot,$turn)
+{
+	if($turn==1) {
+		if($spot==1) {
+			return "user1cardid1";
+		} else if($spot==2) {
+			return "user1cardid2";
+		} else if($spot==3) {
+			return "user1cardid3";
+		} else if($spot==4) {
+			return "user1cardid4";
+		} else if($spot==5) {
+			return "user1cardid5";
+		}
+	} else {
+		if($spot==1) {
+			return "user2cardid1";
+		} else if($spot==2) {
+			return "user2cardid2";
+		} else if($spot==3) {
+			return "user2cardid3";
+		} else if($spot==4) {
+			return "user2cardid4";
+		} else if($spot==5) {
+			return "user2cardid5";
+		}
+	}
+}
+
+function findColumnHP($spot,$turn)
+{
+	if($turn==1) {
+		if($spot==1) {
+			return "user1cardhp1";
+		} else if($spot==2) {
+			return "user1cardhp2";
+		} else if($spot==3) {
+			return "user1cardhp3";
+		} else if($spot==4) {
+			return "user1cardhp4";
+		} else if($spot==5) {
+			return "user1cardhp5";
+		}
+	} else {
+		if($spot==1) {
+			return "user2cardhp1";
+		} else if($spot==2) {
+			return "user2cardhp2";
+		} else if($spot==3) {
+			return "user2cardhp3";
+		} else if($spot==4) {
+			return "user2cardhp4";
+		} else if($spot==5) {
+			return "user2cardhp5";
+		}
+	}
+}
+
+//use this later to get the board state of the game from one users perspective
+/*function getBoardState($connection,$turn)
+{
+	
+}*/

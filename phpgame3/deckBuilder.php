@@ -1,6 +1,6 @@
 <?php
 include "functions.php";
-include "dbInfo.php"
+include "dbInfo.php";
 
 if(isset($_POST['cardCollection']))
 {
