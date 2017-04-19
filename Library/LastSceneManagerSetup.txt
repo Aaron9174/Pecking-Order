@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Main Menu.unity
+=======
+- path: Assets/BattleScene.unity
+>>>>>>> 79941061d60643833752509697c4b731a4c2f032
   isLoaded: 1
   isActive: 1
