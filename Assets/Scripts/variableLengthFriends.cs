@@ -54,7 +54,6 @@ public class variableLengthFriends : MonoBehaviour {
         while (!w.isDone) { }
         String result = w.text;
 
-        Debug.Log("YAS: "+result);
         string[] friends = result.Split(separators, StringSplitOptions.RemoveEmptyEntries);
 
         return friends;
@@ -79,7 +78,8 @@ public class variableLengthFriends : MonoBehaviour {
 
         if(updateFriends)
         {
-            //getUsernames();
+            //this array hold all of the names of the friends this user has that are now online
+            String[] friendArray = getUsernames();
 
             length = calculateLength();
 
