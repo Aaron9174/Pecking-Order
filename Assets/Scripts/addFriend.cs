@@ -15,7 +15,7 @@ public class addFriend : MonoBehaviour
 
     public void add()
     {
-        string url = "http://gamephp2.hmktqg5mmp.us-east-1.elasticbeanstalk.com/";
+        string url = "http://gamephp2.hmktqg5mmp.us-east-1.elasticbeanstalk.com/player.php";
         WWWForm form = new WWWForm();
         friendName = friendInput.GetComponent<InputField>().text;
         Debug.Log(friendName);
