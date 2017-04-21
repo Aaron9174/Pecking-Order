@@ -13,16 +13,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterAsset: {fileID: 0}
   typeImage: {fileID: 21300000, guid: b2a82c9dd2926fb40b027462e3c0cd52, type: 3}
-  isCreature: 0
+  isCreature: 1
   isSpell: 0
   Description: 
   CardImage: {fileID: 0}
-  ManaCost: 0
-  Attack: 0
+  ManaCost: 3
+  Attack: 3
   AttacksForOneTurn: 1
   Taunt: 0
   Charge: 0
-  CreatureScriptName: 
+  CreatureScriptName: gorilla
   specialCreatureAmount: 0
   level: 0
   SpellScriptName: 

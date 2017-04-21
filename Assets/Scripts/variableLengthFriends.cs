@@ -3,8 +3,10 @@ using System;
 using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
-public class variableLengthFriends : MonoBehaviour {
+public class variableLengthFriends : MonoBehaviour
+{
 
     public GameObject slot;
     public GameObject temp;
@@ -36,7 +38,7 @@ public class variableLengthFriends : MonoBehaviour {
 
     public void position(GameObject[] slots, Vector3 mv)
     {
-        for(int i = 0; i < slots.Length; i++)
+        for (int i = 0; i < slots.Length; i++)
         {
             mv.y = 25 * i;
 
@@ -74,9 +76,9 @@ public class variableLengthFriends : MonoBehaviour {
             updateFriends = false;
             activate();
         }
-            
 
-        if(updateFriends)
+
+        if (updateFriends)
         {
             //this array hold all of the names of the friends this user has that are now online
             String[] friendArray = getUsernames();
@@ -87,20 +89,31 @@ public class variableLengthFriends : MonoBehaviour {
 
             Debug.Log("length = " + length);
 
+            slot.SetActive(false);
+
+            if (length >= 1)
+            {
+                slot.SetActive(true);
+                slot.GetComponentInChildren<Text>().text = friendArray[0];
+            }
+
+
             if (length != 0)
             {
                 Vector3 mv = slot.transform.position;
 
                 Debug.Log("slot position = " + slot.transform.position);
-                for (int i = 0; i < length-1; i++)
+                for (int i = 0; i < length - 1; i++)
                 {
+
+                    Debug.Log(friendArray[i]);
                     slots[i] = Instantiate(slot, slot.transform.position, Quaternion.identity, slot.transform.parent);
                     slots[i].SetActive(true);
+                    slots[i].GetComponentInChildren<Text>().text = friendArray[i + 1];
+
                     mv.y = mv.y - 4;
                     slots[i].transform.position = mv;
 
-                    Debug.Log("GameObject = " + slots[i] + " transform.position.x = " + slots[i].transform.position.x + " transform.position.y = " +
-                        slots[i].transform.position.y + " transform.position.z = " + slots[i].transform.position.z + " active = " + slots[i].activeSelf + " \n");
                 }
             }
         }
@@ -113,3 +126,4 @@ public class variableLengthFriends : MonoBehaviour {
 
     }
 }
+

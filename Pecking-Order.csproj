@@ -94,8 +94,10 @@
     <Compile Include="Assets\Scripts\AssetScripts\Scriptable Assets\Types\characterAsset.cs" />
     <Compile Include="Assets\Scripts\AssetScripts\Scriptable Assets\Types\characterIntegration.cs" />
     <Compile Include="Assets\Scripts\AssetScripts\Scriptable Assets\scriptableObject.cs" />
+    <Compile Include="Assets\Scripts\CardClass.cs" />
     <Compile Include="Assets\Scripts\CardRotation.cs" />
     <Compile Include="Assets\Scripts\CheckGame.cs" />
+    <Compile Include="Assets\Scripts\Deck.cs" />
     <Compile Include="Assets\Scripts\DenyScript.cs" />
     <Compile Include="Assets\Scripts\DraggingScripts\DraggingActionsExtend.cs" />
     <Compile Include="Assets\Scripts\DraggingScripts\DraggingActionsGeneral.cs" />
@@ -113,7 +115,6 @@
     <Compile Include="Assets\Scripts\addFriend.cs" />
     <Compile Include="Assets\Scripts\buttonScript.cs" />
     <Compile Include="Assets\Scripts\getUserAttributes.cs" />
-    <Compile Include="Assets\Scripts\initBothDecks.cs" />
     <Compile Include="Assets\Scripts\variableLengthFriends.cs" />
   </ItemGroup>
   <ItemGroup>

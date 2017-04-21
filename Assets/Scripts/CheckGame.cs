@@ -18,6 +18,7 @@ public class CheckGame : MonoBehaviour {
     {
         WWWForm form = new WWWForm();
         form.AddField("username", username);
+        form.AddField("gameExist", "true");
         WWW w = new WWW(url, form);
         while (!w.isDone) { }
         string result = w.text;

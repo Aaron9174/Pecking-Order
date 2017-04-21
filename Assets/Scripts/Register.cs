@@ -73,7 +73,7 @@ public class Register : MonoBehaviour {
                 forminit.AddField("username", Username);
                 string initURL = "http://gamephp2.hmktqg5mmp.us-east-1.elasticbeanstalk.com/deckBuilder.php";
                 WWW winit = new WWW(initURL, forminit);
-                while (!winit.isDone) { }
+                //while (!winit.isDone) { }
                 //string resultInit = winit.text;
                 Debug.Log("registerd");
                 RegSuccess.SetActive(true);
