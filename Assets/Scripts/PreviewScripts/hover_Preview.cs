@@ -63,6 +63,13 @@ public class hover_Preview : MonoBehaviour {
 
     }
 
+    private void OnMouseDown()
+    {
+        overCollider = false;
+        if (!PreviewingCard())
+            StopAllPreviews();
+    }
+
     void OnMouseExit()
     {
         overCollider = false;

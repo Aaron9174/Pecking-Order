@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2015
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pecking-Order", "Pecking-Order.csproj", "{7439EEE5-8864-07B3-35F9-6A2218D488DA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pecking-Order.Editor", "Pecking-Order.Editor.csproj", "{BA4E166C-FF6A-1DF4-368D-0060A7AF3231}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{7439EEE5-8864-07B3-35F9-6A2218D488DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7439EEE5-8864-07B3-35F9-6A2218D488DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7439EEE5-8864-07B3-35F9-6A2218D488DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA4E166C-FF6A-1DF4-368D-0060A7AF3231}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA4E166C-FF6A-1DF4-368D-0060A7AF3231}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA4E166C-FF6A-1DF4-368D-0060A7AF3231}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA4E166C-FF6A-1DF4-368D-0060A7AF3231}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

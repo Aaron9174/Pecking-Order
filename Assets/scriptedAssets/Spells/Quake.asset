@@ -17,8 +17,8 @@ MonoBehaviour:
   isSpell: 1
   Description: Deal 3 damage to all non-air creatures.
   CardImage: {fileID: 21300000, guid: 13de12bfbd1715e418fa00148d81c60c, type: 3}
-  ManaCost: 6
-  Attack: 0
+  ManaCost: 3
+  Attack: -3
   AttacksForOneTurn: 1
   Taunt: 0
   Charge: 0

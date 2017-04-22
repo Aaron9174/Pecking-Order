@@ -39,7 +39,7 @@ public class DraggingActionsTest : MonoBehaviour {
 
             if (useDisplacement)
             {
-                pointDisplacement = transform.position + MouseWorldCoord();
+                pointDisplacement = transform.position - MouseWorldCoord();
             }
 
             else
