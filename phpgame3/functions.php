@@ -1,5 +1,5 @@
 <?php
-
+include "Card.php";
 //get the id of a user from their username
 function getID($connection,$username)
 {
@@ -263,16 +263,54 @@ function initCollection($connection,$userid)
 	}
 }
 
-//creates a deck suer pair in the user_deck table
+//creates a deck user pair in the user_deck table
 function initDeck($connection,$userid)
 {
-	$SQL = "INSERT INTO user_deck (userid)
+	$SQL = "INSERT INTO game.user_deck (userid)
 			VALUES (?)";
 	if ($stmt = mysqli_prepare($connection,$SQL)) {
 		mysqli_stmt_bind_param($stmt, "i", $userid);
 		mysqli_stmt_execute($stmt);
 		mysqli_stmt_close($stmt);
 	}
+	
+	$SQL = "SELECT deckid
+			FROM game.user_deck
+			where userid = ?";
+	$deckID;
+	if ($stmt = mysqli_prepare($connection,$SQL)) {
+		mysqli_stmt_bind_param($stmt, "i", $userid);
+		mysqli_stmt_bind_result($stmt,$deckID);
+		mysqli_stmt_execute($stmt);
+		mysqli_stmt_fetch($stmt);
+		mysqli_stmt_close($stmt);
+	}
+	
+	$SQL = "INSERT INTO game.deck (ownerid,cardid,deckid)
+			VALUES (?,?,?)";
+	if ($stmt = mysqli_prepare($connection,$SQL)) {
+		echo "before loop";
+		$i=1;
+		while($i<=30)
+		{
+			echo "inside loop" . $i . "<br />";
+			if($i <=20) {
+				$cardid = $i;
+			} else {
+				$cardid = $i+rand(5,20);
+			}
+			$bind = mysqli_stmt_bind_param($stmt, "iii",$userid,$cardid,$deckID);
+			$result = mysqli_stmt_execute($stmt);
+			$i=$i+1;
+			if($bind) {
+				echo "true";
+			}
+			if($result) {
+				echo "result true";
+			}
+		}
+		mysqli_stmt_close($stmt);
+	}		
 }
 
 //gets the spell effect from the spell_effect table
@@ -328,6 +366,31 @@ function attack($connection,$gameID,$attackIdSpot,$attackHpSpot,$attackhp,$defen
 			
 	if ($stmt = mysqli_prepare($connection,$SQL)) {
 		mysqli_stmt_bind_param($stmt, "i", $gameid);
+		mysqli_stmt_execute($stmt);
+		mysqli_stmt_close($stmt);
+	}
+}
+
+function directAttack($connection,$gameid,$turn,$attack)
+{
+	if($turn==1) {
+		$userhp = "user1hp";
+	} else {
+		$userhp = "user2hp";
+	}
+	$SQL = "SELECT ".$userhp." FROM game.game_instance WHERE gameid = ?";
+	if ($stmt = mysqli_prepare($connection,$SQL)) {
+		mysqli_stmt_bind_param($stmt, "i", $gameid);
+		mysqli_stmt_bind_result($stmt,$hp);
+		mysqli_stmt_execute($stmt);
+		mysqli_stmt_fetch($stmt);
+		mysqli_stmt_close($stmt);
+	}
+	
+	$SQL = "UPDATE game.game_instance
+			SET ".$userhp. " = ? WHERE gameid = ?";
+	if ($stmt = mysqli_prepare($connection,$SQL)) {
+		mysqli_stmt_bind_param($stmt, "ii", $hp,$gameid);
 		mysqli_stmt_execute($stmt);
 		mysqli_stmt_close($stmt);
 	}
@@ -431,7 +494,55 @@ function findColumnHP($spot,$turn)
 }
 
 //use this later to get the board state of the game from one users perspective
-/*function getBoardState($connection,$turn)
+function getBoardState($connection,$turn,$gameid)
 {
-	
-}*/
+	$SQL = "SELECT *
+			FROM game.game_instance
+			WHERE gameid = ?";
+	if ($stmt = mysqli_prepare($connection,$SQL)) {
+		mysqli_stmt_bind_param($stmt, "i", $gameid);
+		mysqli_stmt_execute($stmt);
+		$gamestate = mysqli_fetch_array($stmt);
+		mysqli_stmt_close($stmt);
+	}
+	$count = count($gamestate);
+	for($i=2;$i<$count;$i++)
+	{
+		echo $gamestate[$i] . ":";
+	}
+}
+
+//returns a shuffled deck with all of the users cards
+function startDeck($connection,$userid)
+{
+	$fullDeck = array();
+	$SQL = "SELECT a.name,a.attack,a.mana,a.sacrifice,a.type
+			FROM game.deck d, game.animal a
+			WHERE d.cardid = a.cardid
+			AND d.ownerid =?";
+	if ($stmt = mysqli_prepare($connection,$SQL)) {
+		mysqli_stmt_bind_param($stmt, "i", $userid);
+		mysqli_stmt_execute($stmt);
+		while($row = mysqli_fetch_array($stmt))
+		{
+			$card = new AnimalCard($row['name'],$row['mana'],$row['sacrifice'],$row['attack'],$row['type']);
+			$fullDeck[] = card;
+		}
+		mysqli_stmt_close($stmt);
+	}
+	$SQL = "SELECT s.name,s.mana,s.effect
+			FROM game.deck d, game.spell s
+			WHERE d.cardid = s.cardid
+			AND d.ownerid =?";
+	if ($stmt = mysqli_prepare($connection,$SQL)) {
+		mysqli_stmt_bind_param($stmt, "i", $userid);
+		mysqli_stmt_execute($stmt);
+		while($row = mysqli_fetch_array($stmt))
+		{
+			$card = new SpellCard($row['name'],$row['mana'],$row['effect']);
+			$fullDeck[] = card;
+		}
+		mysqli_stmt_close($stmt);
+	}
+	return $fullDeck;
+}

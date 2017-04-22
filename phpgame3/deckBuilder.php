@@ -46,3 +46,37 @@ if(isset($_POST['userDeckSpell']))
 	$userid = $_POST['username'];
 	getUserDeckSpell($connection,$userid,$_POST['decknum']);
 }
+
+if(isset($_POST['buyPack']))
+{
+    $userid = getID($connection,$_POST['username']);
+    $SQL = "UPDATE game.collection SET num = 3 WHERE userid = ? AND cardid = ?";
+    $i=0;
+    if ($stmt = mysqli_prepare($connection,$SQL)) {
+        while($i<5) {
+                $cardid = rand(1,45);
+                echo $cardid . "  " . $userid;
+		mysqli_stmt_bind_param($stmt, "ii", $userid,$cardid);
+		$result = mysqli_stmt_execute($stmt);
+                $i++;
+            }
+        mysqli_stmt_close($stmt);
+	}
+    $SQL = "SELECT gold FROM game.user WHERE id = ?";
+    $gold;
+    if ($stmt = mysqli_prepare($connection,$SQL)) {
+		mysqli_stmt_bind_param($stmt, "i", $userid);
+		mysqli_stmt_execute($stmt);
+                mysqli_stmt_bind_result($stmt,$gold);
+                mysqli_stmt_fetch($stmt);
+		mysqli_stmt_close($stmt);
+	}
+    $SQL = "UPDATE game.user SET gold = ? WHERE id = ?";
+    $gold = $gold-300;
+    if ($stmt = mysqli_prepare($connection,$SQL)) {
+		mysqli_stmt_bind_param($stmt, "ii", $gold,$userid);
+		mysqli_stmt_execute($stmt);
+		mysqli_stmt_close($stmt);
+	}
+}
+ 
